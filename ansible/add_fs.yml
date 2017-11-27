@@ -1,0 +1,11 @@
+---
+- name: Add a line to fstab file
+  gather_facts: False
+  hosts: rhel74-2
+  tasks:
+    - name: Add entry to fstab
+      lineinfile:
+        path: /etc/fstab
+        line: "# New fstab entry"
+        state: present
+#     when: add is present
