@@ -1,0 +1,12 @@
+---
+- name: Configuracion nginx
+  gather_facts: False
+  hosts: web
+  tasks:
+    - name: Install package
+      yum:
+        name: nginx
+        state: present
+
+    - name: Start the service
+      service: name=nginx state=started
